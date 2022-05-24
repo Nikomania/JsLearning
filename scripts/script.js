@@ -1,4 +1,11 @@
-const MAX_LENGTH_DESC = 60
+const MAX_LENGTH_DESC = 120
+const CLASS_CARD = 'mealscard'
+const ID_PRICE = 'mealsprice'
+const CLASS_DESC = 'mealsdesc'
+const CLASS_DESC_DIV = 'mealsdescdiv'
+const ID_TITULO = 'mealsname'
+const CLASS_HEADER = 'mealsheaderdiv'
+const CLASS_BUTTON = 'mealsbutton'
 
 
 const text_adjust = (text) => {
@@ -18,10 +25,10 @@ const createButton = (name, id) => {
 
 const createBottomMealsCard = (meal) => {
     const div_bottom = document.createElement('div')
-    div_bottom.classList.add('mealsbutton')
+    div_bottom.classList.add(CLASS_BUTTON)
 
     const del_button = createButton('Delete', 'delbut')
-    const send_button = createButton('Send', 'sndbut')
+    const send_button = createButton('Select', 'slcbut')
 
     div_bottom.appendChild(del_button)
     div_bottom.appendChild(send_button)
@@ -32,29 +39,32 @@ const createBottomMealsCard = (meal) => {
 
 const createHeaderMealsCard = (meal) => {
     const div_header = document.createElement('div')
-    div_header.classList.add('mealsheaderdiv')
+    div_header.classList.add(CLASS_HEADER)
     
     const titulo = document.createElement('h3')
-    titulo['id'] = 'mealsname'
+    titulo['id'] = ID_TITULO
     titulo.textContent = meal.name
     
     div_header.appendChild(titulo)
     
+    const css = div_header.style
+    css.backgroundImage = 'linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('+ meal.bg_img + ')'
+
     return div_header
 }
 
 
 const createDescrMealsCard = (meal) => {
     const div_bottom = document.createElement('div')
-    div_bottom.classList.add('mealsdescdiv')
+    div_bottom.classList.add(CLASS_DESC_DIV)
     
-    const desc = document.createElement('span')
-    desc.setAttribute('id', 'mealsdesc')
+    const desc = document.createElement('p')
+    desc.setAttribute('id', CLASS_DESC)
     desc.textContent = text_adjust(meal.description)
     div_bottom.appendChild(desc)
     
-    const value = document.createElement('span')
-    value['id'] = 'mealsprice'
+    const value = document.createElement('p')
+    value['id'] = ID_PRICE
     value.textContent = meal.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
     div_bottom.appendChild(value)
 
@@ -64,7 +74,7 @@ const createDescrMealsCard = (meal) => {
 
 const createMealsCard = (meal) => {
     const div_meal = document.createElement('div')
-    div_meal.classList.add('mealscard')
+    div_meal.classList.add(CLASS_CARD)
 
     /* create these 3 functions*/
     const div_header = createHeaderMealsCard(meal)
@@ -86,6 +96,7 @@ const createMealsCards = () => {
 
     return Mealscards
 }
+
 
 const render = () => {
     const div = document.querySelector('main > div.mealscards')

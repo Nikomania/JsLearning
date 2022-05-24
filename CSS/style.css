@@ -28,26 +28,65 @@ header {
 
 main {
     background-color: var(--main-bg-color);
-    height: 60vh;
+    height: 120vh;
 }
 
 #title {
-    padding: 2vh 0;
+    padding: 3vh 0;
     margin: 0 50vw;
 }
 
-.meals_cards {
-    margin: 0 10%;
+.mealscards {
+    margin: 0 auto;
+    padding: 1% 0%;
     background-color: var(--meals-cards-bg-color);
-    border-radius: 90px;
+    box-sizing: border-box;
+    border-radius: 50px;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    width: 56.1vw;
+}
+
+.mealscard {
+    box-sizing: border-box;
+    margin: 1.5% 1.5%;
+    width: 17vw;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-#button {
-    margin: 0 50%;
+.mealsheaderdiv {
+    box-sizing: border-box;
+    height: 25vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: content-box;
+    padding: 2% 3%;
+}
+
+.mealsdescdiv {
+    margin: 2% 0;
+}
+
+#mealsprice {
+    padding: 1% 42.25%;
+}
+
+.mealsbutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2% auto;
+}
+
+.button {
+    background-color: var(--main-bg-color);
+    margin: 0 2%;
+    padding: 1vh 2vw;
+    border-radius: 50px;
 }
 
 footer {
