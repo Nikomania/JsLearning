@@ -1,0 +1,63 @@
+/*header's background: https://upload.wikimedia.org/wikipedia/commons/f/f7/Abu_Nawas_Beach_restaurant_-_Flickr_-_Al_Jazeera_English_%281%29.jpg*/
+:root {
+    --header-bg-img: url(https://upload.wikimedia.org/wikipedia/commons/f/f7/Abu_Nawas_Beach_restaurant_-_Flickr_-_Al_Jazeera_English_%281%29.jpg);
+    --main-bg-color: #1b1b1b;
+    --footer-bg-color: dimgray;
+    --meals-cards-bg-color: #0e0e0e;
+}
+
+* {
+    color: white;
+    font-family: Verdana;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+header {
+    padding: 2vw 5vh;
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), var(--header-bg-img);
+    height: 35vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    background-color: var(--main-bg-color);
+    height: 60vh;
+}
+
+#title {
+    padding: 2vh 0;
+    margin: 0 50vw;
+}
+
+.meals_cards {
+    margin: 0 10%;
+    background-color: var(--meals-cards-bg-color);
+    border-radius: 90px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#button {
+    margin: 0 50%;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    position: relative;
+    height: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1vw;
+    box-sizing: content-box;    
+}
